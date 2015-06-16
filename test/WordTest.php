@@ -38,4 +38,18 @@ class WordTest extends PHPUnit_Framework_TestCase {
         $nextWords = $word->getNextWords();
         $this->assertTrue($nextWords["many"] === 10);
     }
+
+    public function testCalculateProbability() {
+        //Arrange
+        $word = new Word('hello');
+
+        //Change
+        $word->condition('world');
+        $word->condition('world');
+        $word->condition('another');
+
+        //Assert
+        $this->assertEquals($word->nextWordProbability('world'), 0.666, 0.001);
+        $this->assertEquals($word->nextWordProbability('another'), 0.333, 0.001);
+    }
 }
