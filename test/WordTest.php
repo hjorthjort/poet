@@ -47,8 +47,9 @@ class WordTest extends PHPUnit_Framework_TestCase {
         $word->condition('another');
 
         //Assert
-        $this->assertEquals($word->nextWordProbability('world'), 0.666, 0.001);
-        $this->assertEquals($word->nextWordProbability('another'), 0.333, 0.001);
+        $this->assertEquals($word->nextWordProbability('world'), 0.666, '', 0.001);
+        $this->assertEquals($word->nextWordProbability('another'), 0.333, '', 0.001);
+        $this->assertEquals($word->nextWordProbability('nonexistent'), 0);
     }
 
     public function testGetTotalConditionings() {
