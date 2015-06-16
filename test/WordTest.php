@@ -25,5 +25,14 @@ class WordTest extends PHPUnit_Framework_TestCase {
         $nextWords = $word->getNextWords();
 
         $this->assertTrue(array_key_exists("world", $nextWords));
+        $this->assertTrue($nextWords['world'] === 1);
+
+        for ($i = 0; $i < 10; $i++) {
+            $word->condition('many');
+        }
+
+        $nextWords = $word->getNextWords();
+
+        $this->assertTrue($nextWords["many"] === 10);
     }
 }
