@@ -18,21 +18,24 @@ class WordTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testConditioning() {
+        //Arrange
         $word = new Word('Hello');
 
+        //Change
         $word->condition('world');
 
+        //Assert
         $nextWords = $word->getNextWords();
-
         $this->assertTrue(array_key_exists("world", $nextWords));
         $this->assertTrue($nextWords['world'] === 1);
 
+        //Change
         for ($i = 0; $i < 10; $i++) {
             $word->condition('many');
         }
 
+        //Assert
         $nextWords = $word->getNextWords();
-
         $this->assertTrue($nextWords["many"] === 10);
     }
 }
