@@ -25,8 +25,7 @@ class Word {
 
     }
 
-    public function getNextWords()
-    {
+    public function getNextWords() {
         return $this->nextWords;
     }
 }
