@@ -29,6 +29,11 @@ class Word {
         return $this->nextWords;
     }
 
+    public function nextWordProbability($string) {
+        if (!array_key_exists($string, $this->nextWords)) return 0;
+        return $this->nextWords[$string] / $this->getTotalConditionings();
+    }
+
     public function getTotalConditionings() {
         $count = 0;
         foreach ($this->nextWords as $key => $value) $count += $value;
