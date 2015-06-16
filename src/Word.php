@@ -6,13 +6,12 @@
  */
 
 class Word {
-    private $word;
-
-    private $nextWords;
+    private $word, $nextWords;
 
     public function __construct($word) {
         $this->word = strtolower($word);
         $this->nextWords = array();
+        $count = 0;
     }
 
     public function getWord() {
@@ -20,7 +19,10 @@ class Word {
     }
 
     public function condition($string) {
-        $this->nextWords[$string] = 1;
+        $string = strtolower($string);
+        if (!array_key_exists($string, $this->nextWords)) $this->nextWords[$string] = 1;
+        else ++$this->nextWords[$string];
+
     }
 
     public function getNextWords()
