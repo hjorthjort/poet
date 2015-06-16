@@ -30,9 +30,7 @@ class WordTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($nextWords['world'] === 1);
 
         //Change
-        for ($i = 0; $i < 10; $i++) {
-            $word->condition('many');
-        }
+        for ($i = 0; $i < 10; $i++) $word->condition('many');
 
         //Assert
         $nextWords = $word->getNextWords();
@@ -56,8 +54,7 @@ class WordTest extends PHPUnit_Framework_TestCase {
     public function testGetTotalConditionings() {
         $word = new Word('hello');
 
-        for($i = 0; $i < 10; $i++)
-            $word->condition('world');
+        for($i = 0; $i < 10; $i++) $word->condition('world');
 
         $word->condition('another');
 

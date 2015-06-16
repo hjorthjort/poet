@@ -31,8 +31,7 @@ class Word {
 
     public function getTotalConditionings() {
         $count = 0;
-        foreach ($this->nextWords as $key => $value)
-            $count += $value;
+        foreach ($this->nextWords as $key => $value) $count += $value;
         return $count;
     }
 
