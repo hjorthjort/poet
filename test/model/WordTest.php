@@ -5,16 +5,23 @@
  * Time: 18:20
  */
 
+include_once 'src/model/Word.php';
+
 class WordTest extends PHPUnit_Framework_TestCase {
 
     public function testConstruct() {
         //Arrange
         $word1 = new Word('Hello');
         $word2 = new Word('hellO');
+        $word3 = new Word('I', false);
+        $word4 = new Word('iPhone', false);
 
         //Assert
-        $this->assertEquals($word1->getWord(), 'hello');
-        $this->assertEquals($word2->getWord(), "hello");
+        $this->assertTrue($word1->getWord() === 'hello');
+        $this->assertTrue($word2->getWord() === "hello");
+        $this->assertTrue($word3->getWord() === 'I');
+        $this->assertTrue($word4->getWord() === 'iPhone');
+
     }
 
     public function testConditioning() {
