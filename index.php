@@ -11,12 +11,12 @@
 <neck></neck>
 <body>
 <?php
-    include_once("src/model/Word.php");
-$word = new Word('Hello');
-echo $word->getWord();
+include_once("src/model/Sentence.php");
+$sentence = new Sentence(10, true);
+$string = implode(' ', $sentence->getAsArray()).'.';
+$string = strtoupper(substr($string, 0, 1)) . substr($string, 1);
 
-$word->condition('World');
-echo $word->getTotalConditionings();
+echo $string;
 
 ?>
 </body>
