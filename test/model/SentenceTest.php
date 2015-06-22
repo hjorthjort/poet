@@ -11,9 +11,11 @@ class SentenceTest extends PHPUnit_Framework_TestCase {
 
     public function testConstruct() {
         //Arrange
-        $sentence = new Sentence(5, false);
+        $sentence1 = new Sentence(5, false);
+        $sentence2 = new Sentence(0, false);
 
         //Assert
-        $this->assertTrue(sizeof($sentence->getAsArray()) === 5);
+        $this->assertTrue(sizeof($sentence1->getAsArray()) === 5);
+        $this->assertTrue(sizeof($sentence2->getAsArray()) === 0);
     }
 }
