@@ -20,7 +20,8 @@ class SentenceTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue(sizeof($sentence2->getAsArray()) === 0);
         $this->assertTrue(sizeof($sentence3->getAsArray()) === 50);
         foreach ($sentence3->getAsArray() as $word) {
-            $this->assertTrue($word);
+            //Check that the word has length
+            $this->assertTrue($word==true);
         }
     }
 }
