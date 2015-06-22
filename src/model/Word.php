@@ -8,10 +8,11 @@
 class Word {
     private $word, $nextWords;
 
-    public function __construct($word) {
-        $this->word = strtolower($word);
+    public function __construct($word, $remove_capitals = TRUE) {
+        if ($remove_capitals)
+            $word = strtolower($word);
+        $this->word = $word;
         $this->nextWords = array();
-        $count = 0;
     }
 
     public function getWord() {
