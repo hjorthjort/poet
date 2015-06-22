@@ -13,9 +13,14 @@ class SentenceTest extends PHPUnit_Framework_TestCase {
         //Arrange
         $sentence1 = new Sentence(5, false);
         $sentence2 = new Sentence(0, false);
+        $sentence3 = new Sentence(50, true);
 
         //Assert
         $this->assertTrue(sizeof($sentence1->getAsArray()) === 5);
         $this->assertTrue(sizeof($sentence2->getAsArray()) === 0);
+        $this->assertTrue(sizeof($sentence3->getAsArray()) === 50);
+        foreach ($sentence3->getAsArray() as $word) {
+            $this->assertTrue($word);
+        }
     }
 }
