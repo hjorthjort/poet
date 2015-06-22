@@ -18,8 +18,8 @@ class WordTest extends PHPUnit_Framework_TestCase {
 
         //Assert
         $this->assertTrue($word1->getWord() === 'hello');
-        $this->assertEquals($word2->getWord(), "hello");
-        $this->assertEquals($word3->getWord(), 'I');
+        $this->assertTrue($word2->getWord() === "hello");
+        $this->assertTrue($word3->getWord() === 'I');
         $this->assertTrue($word4->getWord() === 'iPhone');
 
     }
