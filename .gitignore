@@ -1,3 +1,6 @@
+# Project specific ignores files
+src/infrastructure/dblogin.php
+
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
 
 *.iml
