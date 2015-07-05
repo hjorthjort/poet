@@ -1,6 +1,8 @@
 # setup_poet_tables.sql
 
-CREATE DATABASE IF NOT EXISTS poet;
+DROP DATABASE poet;
+
+CREATE DATABASE poet;
 
 USE poet;
 
@@ -26,3 +28,5 @@ CREATE TABLE matrix_values (
 		value INT UNSIGNED,
 		PRIMARY KEY(matrix_id) 
 	);
+
+GRANT ALL ON poet.* TO 'hjort'@'localhost';
